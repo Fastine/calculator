@@ -1,0 +1,38 @@
+html {
+    box-sizing: border-box;
+}
+
+/* Classes */
+.viewport {
+
+}
+
+.display {
+    height: 20px;
+    position: relative;
+}
+.calculator-container {
+    height: 190px;
+    width: 140px;
+    padding: 20px;
+    border: solid black 5px;
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr) repeat(2, 1fr);
+    height: 170px;
+    width: 140px;
+}
+
+.button.equals {
+    grid-column-end: span 2;
+    grid-row-end: span 2;
+}
+
+.clear {
+    font-size: 0.5em;
+    position: absolute;
+    right: 0px;
+    bottom: 6px;
+}
