@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;
+    background-color: slategray;
 }
 
 /* Classes */
@@ -11,11 +12,45 @@ html {
     height: 20px;
     position: relative;
 }
+
+.title {
+    text-align: center;
+}
+
 .calculator-container {
-    height: 190px;
     width: 140px;
     padding: 20px;
     border: solid black 5px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.value {
+    background-color: white;
+    text-align: right;
+    font-size: 1.2em;
+    width: 140px;
+    margin-bottom: 10px;
+}
+
+.value:after {
+    width: 2px;
+    height: 1em;
+    margin-bottom: -4px;
+    content: '';
+    background: black;
+    opacity: 0;
+    display: inline-block;
+    animation: blink .3s linear infinite alternate;
+}
+
+@keyframes blink {
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .button-container {
@@ -23,6 +58,17 @@ html {
     grid-template-columns: repeat(3, 2fr) repeat(2, 1fr);
     height: 170px;
     width: 140px;
+    margin-top: 10px;
+}
+
+.button {
+    border: thin solid black;
+    outline: none;
+}
+
+.button:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
 }
 
 .button.equals {
@@ -30,9 +76,22 @@ html {
     grid-row-end: span 2;
 }
 
+.button.number {
+    background-color: #E47929;
+}
+
+.button.operator {
+    background-color: #5A4D43;
+}
+
 .clear {
     font-size: 0.5em;
     position: absolute;
-    right: 0px;
-    bottom: 6px;
+    background-color: white;
+    bottom: 21px;
+}
+
+.button:active {
+    transform: scale(0.9);
+    transition: all 0s;
 }

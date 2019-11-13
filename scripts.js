@@ -27,3 +27,10 @@ function divide(num1, num2) {
 function operate(fn, num1, num2) {
     return result = fn(num1, num2);
 }
+
+// UI Functions
+// Display 
+
+let displayValue = 0;
+
+l
