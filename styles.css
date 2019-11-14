@@ -18,8 +18,8 @@ html {
 }
 
 .calculator-container {
-    width: 140px;
-    padding: 20px;
+    width: 200px;
+    padding: 2px;
     border: solid black 5px;
     margin: 0 auto;
     margin-top: 5px;
@@ -28,8 +28,9 @@ html {
 .value {
     background-color: white;
     text-align: right;
-    font-size: 1.2em;
-    width: 140px;
+    font-size: 2em;
+    height: 1em;
+    width: 200px;
     margin-bottom: 10px;
 }
 
@@ -54,16 +55,23 @@ html {
 }
 
 .button-container {
-    display: grid;
-    grid-template-columns: repeat(3, 2fr) repeat(2, 1fr);
-    height: 170px;
-    width: 140px;
-    margin-top: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    height: 300px;
+    width: 200px;
+    margin-top: 20px;
 }
 
 .button {
     border: thin solid black;
     outline: none;
+    flex-basis: 25%;
+}
+
+.AC {
+    flex-basis: 75%;
 }
 
 .button:hover{
@@ -84,14 +92,8 @@ html {
     background-color: #5A4D43;
 }
 
-.clear {
-    font-size: 0.5em;
-    position: absolute;
-    background-color: white;
-    bottom: 21px;
-}
-
 .button:active {
+    /* //change this shitty shit */
     transform: scale(0.9);
     transition: all 0s;
 }

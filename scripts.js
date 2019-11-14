@@ -31,6 +31,30 @@ function operate(fn, num1, num2) {
 // UI Functions
 // Display 
 
+let init = 0;
 let displayValue = 0;
+document.getElementById('value').innerHTML = `${displayValue}`;
 
-l
+
+const numberButtons = Array.from(document.querySelectorAll('.number'));
+numberButtons.forEach(number => number.addEventListener('click', populateDisplay))
+document.querySelector('.AC').addEventListener('click', clearDisplay)
+document.querySelector('.del').addEventListener('click', del)
+
+function populateDisplay() {
+    const number = this.getAttribute("key");
+    (init > 0 ) ? displayValue = `${displayValue}${number}` : displayValue = `${number}`;
+    document.getElementById('value').innerHTML = `${displayValue}`;
+    init++;
+}
+
+function clearDisplay() {
+    displayValue = 0;
+    init = 0;
+    document.getElementById('value').innerHTML = `${displayValue}`;
+}
+
+function del() {
+    displayValue = displayValue.substring(0, displayValue.length-1)
+    document.getElementById('value').innerHTML = `${displayValue}`;
+}
